@@ -29,3 +29,13 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// 2023-03-19 追加
+def springBootApplicationName = 'EasyPeasy-0.0.1-SNAPSHOT' // 生成するjarファイル名を定義した変数（別に変数化しなくても良い）
+def applicationVersion = project.properties['release.version'] // バーションを定義した変数（別に変数化しなくても良い）
+
+bootJar {
+    baseName = springBootApplicationName // 生成するjarファイル名を指定
+    version = applicationVersion // バーションを指定（詳しいことは調べてないけどなくても良さそう）
+}
+
